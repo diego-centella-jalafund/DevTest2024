@@ -1,26 +1,24 @@
 package main.java.com.example.spring;
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "polls")
 public class Poll {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     private String name;
-    private List<Options> options;
+    // private List<Options> options;
 
     
     public Poll() {
     }
 
-    public Poll(String name, List options) {
+    public Poll(String name) {
         this.name = name;
-        this.options = new ArrayList<>();
+        // this.options = new ArrayList<>();
     }
 
     public String getName() {
@@ -31,11 +29,11 @@ public class Poll {
         this.name = name;
     }
 
-    public List<Options> getOptions() {
-        return options;
-    }
+    // public List<Options> getOptions() {
+    //     return options;
+    // }
 
-    public void setOptions(List<Options> options) {
-        this.options = options;
-    }
+    // public void setOptions(List<Options> options) {
+    //     this.options = options;
+    // }
 }

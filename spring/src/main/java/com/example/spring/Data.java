@@ -9,8 +9,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Data {
+
     @Autowired
    	private PollService pollService;
+    
     @PostConstruct
     public void init() {
 		List options = new ArrayList<>();
@@ -21,7 +23,7 @@ public class Data {
 		List optionsFramework = new ArrayList<>();
 		optionsFramework.add("ASP.NET core");
 
-        pollService.savePoll(new Poll("Favorite Programming Language", options));
-        pollService.savePoll(new Poll("Best Framework", options));
+        pollService.savePoll(new Poll("Favorite Programming Language"));
+        pollService.savePoll(new Poll("Best Framework"));
     }
 }
